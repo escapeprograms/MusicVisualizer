@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Music Synthesizer!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Krub&family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+		<link rel="icon" href="musicsynth.png">
+    <!--MIDI parsing resources-->
+    <script type="text/javascript" src="https://unpkg.com/tone@latest/build/Tone.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/@tonejs/ui@0.0.8/build/tonejs-ui.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@tonejs/midi"></script>
+  </head>
+	
+	<body>
+    <ul class="nav">
+			<li><a href="index.html"><img src="musicsynth.png"></a></li>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a class="active" href="music.html">Music Synthesizer</a></li>
+		</ul>
+   <section class="main">
+     <input type="file" id="filereader"/>
+     <button onclick="run()">Click to run~</button>
+      <tone-content>
+			<tone-play-toggle disabled=""></tone-play-toggle>
+  		</tone-content>
+     <h1><br></h1>
+  </section>
+
+    <canvas id="canvas"  style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+    <p>MusicSynth | © Copyright 2022 </p>
+    <p id="out">PRAY</p>
+
+    <script src = "./midi.js"></script>
+    <script src = "./playSound.js"></script>
+	  <script src="./render.js"></script>
+
+      
+	</body>
+  
+</html>
