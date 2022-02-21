@@ -99,7 +99,7 @@ for (let i = 0; i<notes.length; i++) {
 setInterval(()=>{
   for (var i = 0; i < shapes.length; i++){
     var s = shapes[i];
-    if (t<notes[i].start) continue;
+    //if (t<notes[i].start||t>notes[i].start+0.5) {continue;}
    // console.log(notes[i].)
    ctx.fillStyle = s.color;
     switch (s.shape) {
