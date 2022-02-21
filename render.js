@@ -20,6 +20,7 @@ var shapes = [];
 var ctx = document.getElementById('canvas').getContext('2d');
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight * 0.8;
+var t = 0;
 
 function run(){
 play();
@@ -95,9 +96,10 @@ for (let i = 0; i<notes.length; i++) {
 
 //animation loop
 
-ctx.globalCompositeOperation = 'destination-over';
+setInterval(()=>{
   for (var i = 0; i < shapes.length; i++){
     var s = shapes[i];
+    if (t<notes[i].start) continue;
    // console.log(notes[i].)
    ctx.fillStyle = s.color;
     switch (s.shape) {
@@ -121,4 +123,6 @@ ctx.globalCompositeOperation = 'destination-over';
   //background
   ctx.fillStyle = 'rgba(0, 0, 0, 1)';
   ctx.fillRect(0, 0, 3000, 3000); // clear canvas
+  t+=20;
+},20);
 }
