@@ -119,7 +119,7 @@ const synths = [];
     .getElementById("start")
     .addEventListener("click", (e) => {
 	if (currentMidi) {
-        const now = Tone.now() + 1.5;//delayed start
+        const now = Tone.now() + 0.5;//delayed start
         currentMidi.tracks.forEach((track) => {
           //create a synth for each track
           const synth = new Tone.PolySynth(Tone.Synth, {
