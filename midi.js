@@ -77,11 +77,9 @@ document.getElementById("filereader")
 						const files = e.target.files;
 						if (files.length > 0) {
 							const file = files[0];
-							//document.querySelector("#FileDrop #Text").textContent = file.name;
 							parseFile(file);
 						}
 					});
-
 
 //read a default file
 //sample song from: https://www.youtube.com/channel/UCVSJyQ0r1U4QNPzVaki30dQ
@@ -120,8 +118,8 @@ const synths = [];
   document
     .getElementById("start")
     .addEventListener("click", (e) => {
-      if (currentMidi) {
-        const now = Tone.now() + 0.5;//delayed start
+	if (currentMidi) {
+        const now = Tone.now() + 1.5;//delayed start
         currentMidi.tracks.forEach((track) => {
           //create a synth for each track
           const synth = new Tone.PolySynth(Tone.Synth, {
