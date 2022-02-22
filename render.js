@@ -120,12 +120,13 @@ var animation = setInterval(()=>{
     if (t<notes[i].start) {
       continue;
     }else if (t>notes[i].start+s.duration) {
-      //console.log("deleting note "+i+"at time "+t);
+      console.log("deleting note "+i+" at time "+t);
       notes = notes.slice(0,i).concat(notes.slice(i+1));//delete one specific element
       shapes = shapes.slice(0,i).concat(shapes.slice(i+1));
       i--;
       continue;
     }
+    console.log("showing note "+i+" at time "+t+", dur: "+s.duration);
     //apply effects
     if (s.effect=="fall"){//fall
       s.y+=s.dy/fps;
