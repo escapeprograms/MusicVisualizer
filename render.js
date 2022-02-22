@@ -28,6 +28,7 @@ var fps = 50;
 function run(){
 //close menus
 document.getElementsByClassName("main")[0].style="display:none;";
+document.getElementById("canvas").style="cursor:none;";
 
 //reset shapes and time
 t = 0;
@@ -39,7 +40,7 @@ for (let i = 0; i<notes.length; i++) {
   var duration = notes[i].duration;
 
   var type;
-	var color;
+  var color;
   var effect;
   var x;
   var y;
