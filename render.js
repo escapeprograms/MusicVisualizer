@@ -62,9 +62,9 @@ for (let i = 0; i<notes.length; i++) {
       dur = duration+0.5;
   	}
 
-  if (pitch % 8 == 0) {
-    color="white";
-  }
+	if (pitch % 8 == 0) {
+	        color="0, 179, 255";
+	}
 	else if (pitch%8==1){
 		color="255, 0, 0";
 	}
