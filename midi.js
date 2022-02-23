@@ -97,6 +97,7 @@ document.getElementById("samplesong")
                     currentMidi.tracks.forEach((t)=>{
                       data = t.notes;
                       data.forEach((n)=>{
+			if (n.duration==0) n.duration=0.1;
                         notes.push({
                           pitch : n.midi,
                           volume : n.velocity,
