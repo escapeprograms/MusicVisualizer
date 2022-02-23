@@ -131,7 +131,7 @@ const synths = [];
           synths.push(synth);
           //schedule all of the events
           track.notes.forEach((note) => {
-            if (n.duration==0) n.duration=0.1;//handler for 0 length notes
+            if (note.duration==0) note.duration=0.1;//handler for 0 length notes
             synth.triggerAttackRelease(
               note.name,
               note.duration,
