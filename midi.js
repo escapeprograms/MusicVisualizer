@@ -71,21 +71,19 @@ function quicksort(low,high){
 }
 
 //read custom file
-document.getElementById("filereader")
-					.addEventListener("change", (e) => {
-						//get the files
-						const files = e.target.files;
-						if (files.length > 0) {
-							const file = files[0];
-							parseFile(file);
-						}
-					});
+document.getElementById("filereader").addEventListener("change", (e) => {
+	//get the files
+	const files = e.target.files;
+	if (files.length > 0) {
+		const file = files[0];
+		parseFile(file);
+	}
+});
 
 //read a default file
 //sample song from: https://www.youtube.com/channel/UCVSJyQ0r1U4QNPzVaki30dQ
-document.getElementById("samplesong")
-					.addEventListener("click", (e) => {
-						//get the files
+document.getElementById("samplesong").addEventListener("click", (e) => {
+	    //get the files
             var xmlhttp = new XMLHttpRequest();
             var url = "sampleSong.txt";
 
@@ -97,7 +95,6 @@ document.getElementById("samplesong")
                     currentMidi.tracks.forEach((t)=>{
                       data = t.notes;
                       data.forEach((n)=>{
-			if (n.duration==0) n.duration=0.1;
                         notes.push({
                           pitch : n.midi,
                           volume : n.velocity,
@@ -134,6 +131,7 @@ const synths = [];
           synths.push(synth);
           //schedule all of the events
           track.notes.forEach((note) => {
+            if (n.duration==0) n.duration=0.1;//handler for 0 length notes
             synth.triggerAttackRelease(
               note.name,
               note.duration,
